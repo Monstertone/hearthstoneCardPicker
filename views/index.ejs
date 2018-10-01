@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="/cards" method="post">
+      <input type="number" name="mana" placeholder="mana">
+      <input type="number" name="attacks" placeholder="attack">
+      <input type="number" name="health" placeholder="health">
+      <input type="string" name="description" placeholder="name/description">
+      <input type="submit">
+
+    </form>
+    <h3>Your Current List</h3>
+
+    <%for (i=0; i<deck.length; i++){ %>
+
+    <hr>
+     <div class="">
+       <p>Mana:<%= deck[i].mana %></p>
+       <p>Attacks:<%= deck[i].attacks %></p>
+       <p>Health:<%= deck[i].health %></p>
+       <p>Description:<%= deck[i].description %></p>
+
+       <a href="/cards/remove/<%=deck[i].id%>">Remove from list</a>
+
+     </div>
+
+     <% } %>
+    <hr>
+
+    <h1>All Cards:</h1>
+   <%for (i=0; i<cards.length; i++){ %>
+
+   <hr>
+    <div class="">
+      <p>Mana:<%= cards[i].mana %></p>
+      <p>Attacks:<%= cards[i].attacks %></p>
+      <p>Health:<%= cards[i].health %></p>
+      <p>Description:<%= cards[i].description %></p>
+
+    <a href="/cards/add/<%=cards[i].id%>">Add to List</a>
+    </div>
+
+    <% } %>
+
+
+  </body>
+</html>
